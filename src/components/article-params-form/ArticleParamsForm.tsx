@@ -74,47 +74,61 @@ export const ArticleParamsForm = ({ onApply }: ArticleParamsFormProps) => {
 					className={styles.form}
 					onSubmit={handleSubmit}
 					onReset={handleReset}>
-					<Text size={12} weight={800} uppercase>
-						Задайте параметры
-					</Text>
+					<div className={styles.formTitle}>
+						<Text size={31} weight={800} uppercase>
+							Задайте параметры
+						</Text>
+					</div>
 
-					<Select
-						title='Шрифт'
-						selected={draft.fontFamilyOption}
-						options={fontFamilyOptions}
-						onChange={(option) => handleChange('fontFamilyOption', option)}
-					/>
+					<div className={styles.fontFamily}>
+						<Select
+							title='Шрифт'
+							selected={draft.fontFamilyOption}
+							options={fontFamilyOptions}
+							onChange={(option) => handleChange('fontFamilyOption', option)}
+						/>
+					</div>
 
-					<RadioGroup
-						title='Размер шрифта'
-						name='font-size'
-						selected={draft.fontSizeOption}
-						options={fontSizeOptions}
-						onChange={(option) => handleChange('fontSizeOption', option)}
-					/>
+					<div className={styles.fontSize}>
+						<RadioGroup
+							title='Размер шрифта'
+							name='font-size'
+							selected={draft.fontSizeOption}
+							options={fontSizeOptions}
+							onChange={(option) => handleChange('fontSizeOption', option)}
+						/>
+					</div>
 
-					<Select
-						title='Цвет шрифта'
-						selected={draft.fontColor}
-						options={fontColors}
-						onChange={(option) => handleChange('fontColor', option)}
-					/>
+					<div className={styles.fontColor}>
+						<Select
+							title='Цвет шрифта'
+							selected={draft.fontColor}
+							options={fontColors}
+							onChange={(option) => handleChange('fontColor', option)}
+						/>
+					</div>
 
-					<Separator />
+					<div className={styles.separator}>
+						<Separator />
+					</div>
 
-					<Select
-						title='Цвет фона'
-						selected={draft.backgroundColor}
-						options={backgroundColors}
-						onChange={(option) => handleChange('backgroundColor', option)}
-					/>
+					<div className={styles.backgroundColor}>
+						<Select
+							title='Цвет фона'
+							selected={draft.backgroundColor}
+							options={backgroundColors}
+							onChange={(option) => handleChange('backgroundColor', option)}
+						/>
+					</div>
 
-					<Select
-						title='Ширина контента'
-						selected={draft.contentWidth}
-						options={contentWidthArr}
-						onChange={(option) => handleChange('contentWidth', option)}
-					/>
+					<div className={styles.contentWidth}>
+						<Select
+							title='Ширина контента'
+							selected={draft.contentWidth}
+							options={contentWidthArr}
+							onChange={(option) => handleChange('contentWidth', option)}
+						/>
+					</div>
 
 					<div className={styles.bottomContainer}>
 						<Button title='Сбросить' htmlType='reset' type='clear' />
